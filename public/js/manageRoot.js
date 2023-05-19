@@ -5,15 +5,15 @@ window.onload=()=>{
         location.replace('/register');
     }else{
         var formdata=new FormData();
-        formdata.append('username',document.cookie.split('=')[1]);
+        formdata.append('username',document.cookie.split('=')[0]);
         var http=new XMLHttpRequest();
         http.onloadend=e=>{
             var res=Number(JSON.parse(e.target.responseText));
-            if(!res){
-                location.replace('/register')
-            }else{
+            // if(!res){
+            //     location.replace('/register')
+            // }else{
                 var formdata=new FormData();
-                formdata.append('user',document.cookie.split('=')[1]);
+                formdata.append('user',document.cookie.split('=')[0]);
 
                 var http=new XMLHttpRequest();
                 http.onloadend=e=>{
@@ -21,7 +21,7 @@ window.onload=()=>{
                 }
                 http.open('post','/userInformation');
                 http.send(formdata)
-            }
+            // }
         }
         http.open('post','/red');
         http.send(formdata);

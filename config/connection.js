@@ -2,7 +2,7 @@ const mysql=require('mysql');
 
 var connection=mysql.createConnection({
     host:       'localhost',
-    password:   '9601371893Jm',
+    password:   'SmartWork_1234',
     user:       'root',
     database:   'messenger'
 })

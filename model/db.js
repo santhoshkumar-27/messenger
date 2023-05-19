@@ -111,6 +111,7 @@ module.exports.Chat=class Chat{
     static red(res,username){
         var sql=`select username from users where username="${username}"`;
         connection.query(sql,(err,result)=>{
+            console.log('asdfdasf',result);
             if(result.length){
                 res.send("1");
             }else{
